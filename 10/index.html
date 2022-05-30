@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id = "info" class = "width100 flex-display flex-centre">
+        <table id = "info-table">
+            <caption>INFO</caption>
+            <tr>
+                <td>объем памяти:</td><td id = "memory-size">10</td>
+            </tr>
+            <tr>
+                <td>число страниц:</td><td id = "page-count">100</td>
+            </tr>
+            <tr>
+                <td>число свободных страниц:</td><td id = "page-free-count">1000</td>
+            </tr>
+            <tr>
+                <td>размер страницы:</td><td id = "page-size">10000000000000000</td>
+            </tr>
+            <tr>
+                <td>общее число обращений к страницам:</td><td id = "request-count">10000</td>
+            </tr>
+            <tr>
+                <td>количество выталкиваний из памяти:</td><td id = "push-count"> 100000</td>
+            </tr>
+        </table>
+    </div>
+    <h1>ФУНКЦИОНАЛ</h1>
+    <div id = "menu" class = "width100 flex-display flex-row">    
+        <div id = "menu-block" class = "width40 flex-display flex-column">
+            <button class = "button button100 button-menu" onclick="giveMemoryShow()">Выделить память</button>
+            <button class = "button button100 button-menu" onclick="addProcessShow()" id = "btn1" disabled = "true">Добавить</button>
+            <button class = "button button100 button-menu" onclick="deleteProcessShow()" id = "btn2" disabled = "true">Удалить</button>
+            <button class = "button button100 button-menu" onclick="access()" id = "btn3" disabled = "true">Циклическое обращение</button>
+        </div>
+        <div id = "menu-block-show" class = "width60 flex-display flex-column">
+           <div id = "give-memory" class = "width100 flex-display flex-column flex-centre flex-item-centre">
+               <table class = "width80">
+                   <caption>Выделение страниц памяти</caption>
+                   <tr>
+                       <td>Размер памяти:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "memory-size-input"></td>
+                   </tr>
+                   <tr>
+                        <td>Количество страниц:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "page-count-input"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button id = "give-memory-button" class = "button button100" onclick="giveMemory()">Выделить</button></td>
+                    </tr>
+               </table>
+               <p>Размер страницы - целое число от деления размера памяти на количтво страниц. Поэтому после выделения памяти будет подобран подходящий объем памяти, не превышающий пользовательский.</p>
+           </div>
+           <div id = "add-process" class = "width100 flex-display flex-column flex-centre flex-item-centre">
+                <table class = "width80">
+                    <caption>Добавление процесса</caption>
+                    <tr>
+                        <td>Process:</td><td><input type = "number" min = "1" pattern="[0-9]" disabled = "true" value = "1" id = "add-process-name-input"></td>
+                    </tr>
+                    <tr>
+                        <td>Размер процесса:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "add-process-size-input"></td>
+                    </tr>
+                    <tr>
+                        <td>Количество страниц:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "add-page-count-input"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button id = "add-process-button" class = "button button100" onclick = "addProcess()">Добавить</button></td>
+                    </tr>
+                </table>
+                <p>В случае нехватки страниц под добавляемый процесс, будут замещены  давно не используемые страницы памяти</p>
+           </div>
+           <div id = "delete-process" class = "width100 flex-display flex-column flex-centre flex-item-centre">
+                <table class = "width80">
+                    <caption>Удаление процесса</caption>
+                    <tr>
+                        <td>Удалить процесс полностью:</td><td><input type = "checkbox" id = "delete-all-page-checkbox" onchange="checkboxChange()"></td>
+                    </tr>
+                    <tr>
+                        <td>Имя процесса:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "delete-name-process-input"></td>
+                    </tr>
+                    <tr>
+                        <td>Номер страницы:</td><td><input type = "number" min = "1" pattern="[0-9]" id = "delete-page-number-input"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button id = "delete-process-button" class = "button button100" onclick="deleteProcess()">Удалить</button></td>
+                    </tr>
+                </table>
+           </div>  
+        </div>
+    </div>
+    <div id = "main" class = "width100 flex-display flex-row">
+        <div id="main-info" class = "width40 flex-display flex-column flex-item-centre">
+        </div>
+        <div id = "main-table" class = "width60 flex-display flex-column flex-item-centre">
+        </div>
+    </div>
+</body>
+</html>

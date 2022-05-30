@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.flex-display{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-centre{
+    justify-content: center;
+}
+.flex-item-centre{
+   align-items: center;
+}
+.width100{  
+    width: 100%;
+}
+.width60{  
+    width: 60%;
+}
+.width40{  
+    width: 40%;
+}
+.width80{
+    width: 80%;
+}
+.width90{
+    width: 90%;
+}
+.tableCentre td,th{
+    border: 1px solid black;
+    text-align: center;
+}
+.tableCentre {
+    border: 1px solid black;
+}
+.button{
+    outline: none;
+}
+.button-menu{
+    height: 25px;
+}
+.button100{
+    width: 100%;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+table caption{
+    border-bottom: 1px solid black;
+}
+h1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 650;
+}
+#info{
+    border-bottom: 1px solid black;
+}
+#menu{
+    margin-top: 20px;
+    height: 150px;  
+}
+#give-memory{
+    display:none;
+}
+#give-memory p{
+    text-align: center;
+}
+#add-process{
+    display:none;
+}
+#add-process p{
+    text-align: center;
+}
+#delete-process{
+    display:none;
+}
+#main{
+    margin-top: 20px;
+    border-top: 1px solid black;    
+}
+#main div{
+    height: 500px;
+    overflow: scroll;
+}
